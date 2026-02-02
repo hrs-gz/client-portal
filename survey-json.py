@@ -6,6 +6,8 @@ SURVEY_ID = "8681695"
 
 SURVEY_URL: "https://survey.alchemer.com/s3/8681695/70c8f2ae6336"
 
+#get json object of the survey
+
 url = f"https://api.alchemer.com/v5/survey/{SURVEY_ID}"
 params = {
     "api_token": API_TOKEN,
