@@ -1,0 +1,22 @@
+import requests
+
+API_TOKEN = "YOUR_API_TOKEN"
+API_SECRET = "YOUR_API_SECRET"
+SURVEY_ID = "8681695"
+
+SURVEY_URL: "https://survey.alchemer.com/s3/8681695/70c8f2ae6336"
+
+url = f"https://api.alchemer.com/v5/survey/{SURVEY_ID}"
+params = {
+    "api_token": API_TOKEN,
+    "api_token_secret": API_SECRET
+}
+
+response = requests.get(url, params=params)
+
+if response.status_code == 200:
+    survey_json = response.json()
+    print("Survey JSON:")
+    print(survey_json)
+else:
+    print(f"Error {response.status_code}: {response.text}")
